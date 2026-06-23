@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Welcome Card -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <h2>🏦 Welcome, {{ username }}</h2>
+            <p class="text-muted">
+                Smart Loan Approval Prediction Dashboard
+            </p>
+        </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+            <div class="card bg-primary text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Total Predictions</h5>
+                    <h1>{{ total }}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card bg-success text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Approved Loans</h5>
+                    <h1>{{ approved }}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card bg-danger text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Rejected Loans</h5>
+                    <h1>{{ rejected }}</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="row mt-4">
+
+        <div class="col-md-6 mb-3">
+            <div class="card shadow">
+                <div class="card-body text-center">
+
+                    <h4>🔍 Loan Prediction</h4>
+
+                    <br>
+
+                    <a href="{{ url_for('predict') }}"
+                       class="btn btn-primary btn-lg">
+
+                        Predict Loan
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card shadow">
+                <div class="card-body text-center">
+
+                    <h4>📋 Prediction History</h4>
+
+                    <br>
+
+                    <a href="{{ url_for('history') }}"
+                       class="btn btn-success btn-lg">
+
+                        View History
+
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Recent Predictions -->
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">Recent Predictions</h5>
+        </div>
+
+        <div class="card-body">
+
+            {% if recent %}
+
+            <table class="table table-striped table-bordered">
+
+                <thead class="table-primary">
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Prediction</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for row in recent %}
+
+                    <tr>
+
+                        <td>{{ row.id }}</td>
+                        <td>{{ row.prediction }}</td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <div class="alert alert-info">
+
+                No prediction history available.
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,800 @@
+/* ===========================
+   GENERAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+a{
+    text-decoration:none;
+}
+.login-title{
+    font-family: 'Outfit', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #0d6efd;
+    white-space: nowrap;      /* Keeps text on one line */
+}
+
+/* ===========================
+   WRAPPER
+=========================== */
+
+.wrapper{
+    display:flex;
+    width:100%;
+    min-height:100vh;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+
+    width:250px;
+
+    background:#0d6efd;
+
+    color:white;
+
+    position:fixed;
+
+    height:100vh;
+
+    padding:25px;
+
+    box-shadow:5px 0 20px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-weight:bold;
+
+}
+
+.sidebar hr{
+
+    border:1px solid rgba(255,255,255,.3);
+
+}
+
+.sidebar a{
+
+    display:block;
+
+    color:white;
+
+    padding:14px;
+
+    margin-top:10px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+    font-size:17px;
+
+}
+
+.sidebar a i{
+
+    margin-right:10px;
+
+}
+
+.sidebar a:hover{
+
+    background:white;
+
+    color:#0d6efd;
+
+    padding-left:22px;
+
+}
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
+
+.main{
+
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    padding:30px;
+
+}
+
+/* ===========================
+   TOPBAR
+=========================== */
+
+.topbar{
+
+    background:white;
+
+    padding:18px 30px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+.topbar h3{
+
+    color:#0d6efd;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+   DASHBOARD CARDS
+=========================== */
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+
+}
+
+.card-body{
+
+    padding:25px;
+
+}
+
+.card h2{
+
+    font-weight:bold;
+
+}
+
+.card h5{
+
+    font-size:18px;
+
+}
+/* ===========================
+   LOGIN & REGISTER
+=========================== */
+
+.login-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    background:linear-gradient(135deg,#0d6efd,#4dabf7);
+
+}
+
+.login-card{
+
+    width:430px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+}
+
+.login-card h2{
+
+    text-align:center;
+
+    color:#0d6efd;
+
+    margin-bottom:25px;
+
+}
+
+.form-control{
+
+    border-radius:10px;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    box-shadow:0 0 10px rgba(13,110,253,.3);
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn{
+
+    border-radius:10px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+table{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+thead{
+
+    background:#0d6efd;
+
+    color:white;
+
+}
+
+tbody tr:hover{
+
+    background:#eef5ff;
+
+}
+
+/* ===========================
+   PREDICT PAGE
+=========================== */
+
+.card-header{
+
+    border-radius:15px 15px 0 0 !important;
+
+}
+
+label{
+
+    font-weight:600;
+
+    margin-bottom:5px;
+
+}
+
+/* ===========================
+   RESULT PAGE
+=========================== */
+
+.result-box{
+
+    text-align:center;
+
+    padding:50px;
+
+}
+
+.result-box h1{
+
+    font-size:45px;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:gray;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:80px;
+
+}
+
+.sidebar h2{
+
+    display:none;
+
+}
+
+.sidebar a{
+
+    text-align:center;
+
+    font-size:20px;
+
+}
+
+.sidebar a i{
+
+    margin:0;
+
+}
+
+.sidebar a span{
+
+    display:none;
+
+}
+
+.main{
+
+    margin-left:80px;
+
+    width:calc(100% - 80px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.topbar{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.main{
+
+    padding:15px;
+
+}
+
+.card{
+
+    margin-bottom:20px;
+
+}
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0d6efd;
+
+    border-radius:20px;
+
+}
+/* ===========================
+   LOGIN & REGISTER
+=========================== */
+
+.login-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    background:linear-gradient(135deg,#0d6efd,#4dabf7);
+
+}
+
+.login-card{
+
+    width:430px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+}
+
+.login-card h2{
+
+    text-align:center;
+
+    color:#0d6efd;
+
+    margin-bottom:25px;
+
+}
+
+.form-control{
+
+    border-radius:10px;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    box-shadow:0 0 10px rgba(13,110,253,.3);
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn{
+
+    border-radius:10px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+table{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+thead{
+
+    background:#0d6efd;
+
+    color:white;
+
+}
+
+tbody tr:hover{
+
+    background:#eef5ff;
+
+}
+
+/* ===========================
+   PREDICT PAGE
+=========================== */
+
+.card-header{
+
+    border-radius:15px 15px 0 0 !important;
+
+}
+
+label{
+
+    font-weight:600;
+
+    margin-bottom:5px;
+
+}
+
+/* ===========================
+   RESULT PAGE
+=========================== */
+
+.result-box{
+
+    text-align:center;
+
+    padding:50px;
+
+}
+
+.result-box h1{
+
+    font-size:45px;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:gray;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:80px;
+
+}
+
+.sidebar h2{
+
+    display:none;
+
+}
+
+.sidebar a{
+
+    text-align:center;
+
+    font-size:20px;
+
+}
+
+.sidebar a i{
+
+    margin:0;
+
+}
+
+.sidebar a span{
+
+    display:none;
+
+}
+
+.main{
+
+    margin-left:80px;
+
+    width:calc(100% - 80px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.topbar{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.main{
+
+    padding:15px;
+
+}
+
+.card{
+
+    margin-bottom:20px;
+
+}
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0d6efd;
+
+    border-radius:20px;
+
+}
+/* Your existing CSS */
+
+.card{
+    border-radius:10px;
+}
+
+/* Paste the new login background CSS below this line */
+
+body{
+    margin:0;
+    padding:0;
+}
+
+/* Remaining CSS... */
+/* Login Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("../images/bg.jpg") no-repeat center center;
+    background-size:cover;
+    filter:blur(8px);
+    transform:scale(1.1);
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    z-index:-1;
+}
+
+.login-box{
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(6px);
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+/* ===========================
+   LOGIN PAGE BACKGROUND
+=========================== */
+
+.login-page{
+    background: none;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-page::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg.jpg") center center/cover no-repeat;
+    filter: blur(8px);
+    transform: scale(1.08);
+    z-index: -2;
+}
+
+.login-page::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    z-index: -1;
+}
+
+/* Glass Effect Login Card */
+
+.login-page .card{
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Heading */
+
+.login-page h2{
+    color:#0d6efd;
+    font-weight:bold;
+}
+
+/* Button */
+
+.login-page .btn-primary{
+    border-radius:10px;
+    font-size:18px;
+}
+.login-page h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #0d6efd;
+    letter-spacing: 1px;
+}

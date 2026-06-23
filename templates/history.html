@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}
+Prediction History
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg">
+
+        <div class="card-header bg-dark text-white">
+
+            <h3>📋 Prediction History</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            {% if predictions %}
+
+            <table class="table table-bordered table-hover">
+
+                <thead class="table-primary">
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Gender</th>
+                        <th>Married</th>
+                        <th>Applicant Income</th>
+                        <th>Co-Applicant Income</th>
+                        <th>Loan Amount</th>
+                        <th>Credit History</th>
+                        <th>Prediction</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for row in predictions %}
+
+                    <tr>
+
+                        <td>{{ row.id }}</td>
+                        <td>{{ row.username }}</td>
+                        <td>{{ row.gender }}</td>
+                        <td>{{ row.married }}</td>
+                        <td>{{ row.applicant_income }}</td>
+                        <td>{{ row.coapplicant_income }}</td>
+                        <td>{{ row.loan_amount }}</td>
+                        <td>{{ row.credit_history }}</td>
+                        <td>{{ row.prediction }}</td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <div class="alert alert-warning">
+
+                No prediction history available.
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

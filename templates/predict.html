@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}
+Loan Prediction
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+<div class="card shadow-lg border-0">
+
+<div class="card-header bg-primary text-white">
+
+<h3>🏦 Loan Approval Prediction</h3>
+
+</div>
+
+<div class="card-body">
+
+<form method="POST">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Gender</label>
+
+<select name="gender" class="form-control" required>
+
+<option value="">Select</option>
+
+<option value="1">Male</option>
+
+<option value="0">Female</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Married</label>
+
+<select name="married" class="form-control" required>
+
+<option value="">Select</option>
+
+<option value="1">Yes</option>
+
+<option value="0">No</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Applicant Income</label>
+
+<input
+type="number"
+name="applicant_income"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Co-Applicant Income</label>
+
+<input
+type="number"
+name="coapplicant_income"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Loan Amount</label>
+
+<input
+type="number"
+name="loan_amount"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Credit History</label>
+
+<select
+name="credit_history"
+class="form-control"
+required>
+
+<option value="">Select</option>
+
+<option value="1">
+Good
+</option>
+
+<option value="0">
+Bad
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="text-center">
+
+<button
+type="submit"
+class="btn btn-success btn-lg">
+
+Predict Loan
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
